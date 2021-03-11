@@ -1,13 +1,19 @@
-
+@import "./reset";
 @import "~bootstrap/scss/bootstrap";
 @import "./breakpoints";
-h2{
-  text-align: center;
-}
+@import "./variables";
+@import "./anchors";
+@import "./navbar";
+
+
+
+
 .heroContainer{
   margin-top: 10vh;
- 
+}
 
+.hero-description{
+  padding: 1em;
 }
 .butterfly-image{
   max-width: 500px;
@@ -35,36 +41,14 @@ h2{
     flex-direction: row;
 }
 }
-$background:  rgb(32, 6, 48); 
+
 .jumbotron{
-  background: #200630;
+  background: white;
   height: auto;
   margin: 0;
 
  
-  h1{
-    margin: .5em 60px;
-    font-size: 45px;
-    text-align: center;
-  background: linear-gradient(90deg, #00FF75 -31.43%, #00FFFF 131.9%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-    @include breakpoint(md){
-      font-size: 60px;
-      text-align: left;
-      margin:  60px;
-      padding: .5em;
-   
-  }
-  
-  }
-  p{
-    color: white;
-    font-size: 18px;
-    @include breakpoint(md){
-      font-size: 20px
-    }
-  }
+
 }
 /* The animation code */
 @keyframes line {
@@ -103,298 +87,6 @@ top: 50px;
 }
 
 
-/************ BURGER ***********************/
-#hamburger-wrap{
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 40px;    
-  z-index:1000;
-  margin-left: auto;
-  
- 
-  @include breakpoint(md){
-      display: none;
-  }
-  }    
-  .burger-open{
-  width: 100%;
-  height: 100%;
-  }
-  .line {
-      position: absolute;
-      height: 10%;
-      width:70%;
-      background:hotpink;
-      box-shadow: .5px .5px black;
-      border-radius:10px;
-      transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
-      }
-      .line01 {
-      top:25%;
-      }
-      .line02 {
-      top:47%;
-      }
-      .line03 {
-      top:69%;
-      }
-    
-      .burger-close .line {
-        box-shadow: none;
-        background: red-color;
-        }
-      .burger-close .line01 {
-      transform:rotate(45deg);
-      top:49%;
-      }
-      .burger-close .line02, .burger-close .line03 {
-      transform:rotate(-45deg);
-      top:49%;
-      }
-    
-
-/**************************************END HAMBURGER*******************************/
-
-.navagation-wrap.mobile-wrap #hamburger-wrap{
-position: fixed;
-z-index: 100000;
-right: 25px;
-} /*Hack for keeping hamburger in place  */
-#active{
-color: blue-color;
-}
-
-
-#main-nav-wrap{
-display: flex;
-justify-content: space-between;
-  padding:  .5em .5em .25em;
-  background-color: inherit;     
- 
-  transition: background .5s; 
-  
-  @include breakpoint(md){
-    padding:  1em 5%;
-    transition: background 0s; 
-  }
-
-.logo-wrap a{
-  color: lightskyblue;
-  font-size: 20px;
-  font-family: black-font;
-  @include breakpoint(md){
-   font-size: 32px;
- 
-  }
-
-  &:hover{
-    opacity: .5;
-  }
-}
-.mobile-phone{
-margin-left: 25px;
-@include breakpoint(md){
-  display: none;
-}
-
-}
-} 
-
-
-.responsive-nav.mobile-nav .nav{
-  width: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 18vh 10% 10% 10%;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;  
-  background: rgb(0, 255, 0);
-  z-index: 1000;
-  text-align: center;
-  @include breakpoint(md){
-      padding:0;
-      width: auto;
-      position: relative;               
-      flex-direction: row;
-      height: auto; 
-      background: inherit;
-      margin: .75em;
-  }
-}
-.responsive-nav.mobile-nav p{
-  font-weight: bold;
-  font-family: black-font;
-  margin-bottom: 0;
-  color: white;
-  font-size: 35px;
-  @include breakpoint(md){       
-    font-weight: 300;     
-    font-size: 20px;       
-    
-}
-}
-.dropdown{
-  font-weight: bold;
-  font-family: black-font;
-  margin-bottom: 0;
-  color: white;
-  background: hotpink;
-  font-size: 25px;
-  @include breakpoint(md){       
-    text-align: left;
-    font-size: 20px;       
-    
-}
-}
-.responsive-nav.mobile-nav .nav a{
-
-  font-family: black-font;
-  font-weight: bold;
-  color: white;
-  font-size: 35px;
-  line-height: 120%;
-  margin:  40px 0;    
-  @include breakpoint(md){       
-      font-weight: 300;     
-      font-size: 20px;       
-      margin: .5em;
-      padding: .5em;
-      color: white;
-  }
-  &:hover {
-    color: yellow;
-  }
-  &:active {
-    color: blue-color;
-  }
-
-}
-.nav{
-  position: fixed;
-  right: -100vw;
-  transition: all .3s ease-in-out;
-  
-  @include breakpoint(md){
-      width: auto;
-      position: relative;  
-      margin: .75em;
-      display: flex;       
-      flex-direction: row;
-      height: auto;  
-      background: inherit;
-      left: 0;
-      transition: none;
-     
-
-  }
-
-}
-.arrow{
-  
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 2px;
-  margin-left: 5px;
-  transform: rotate(-45deg);
-
-
-}
-.down{
-  transform: rotate(45deg);
-}
-.drop{
-    font-family: black-font;
-  font-weight: bold;
-  color: white;
-  font-size: 35px;
-  line-height: 120%;
-  margin:  40px 0; 
-  @include breakpoint(md){
-    font-family: black-font;
-    font-weight: 300;    
-    font-size: 20px;   
-
-      line-height: 120%;
-      margin: .5em;
-      padding: .5em;
-}
-&:hover {
-  color: red-color;
- 
-}
-&:active {
-  color: blue-color;
-}
-
-}
-.nav a{
-  @include breakpoint(md){
-      font-family: black-font;
-      font-weight: 300;      
-      font-size: 20px;
-      line-height: 120%;
-      margin: .5em;
-      padding: .5em;
-  }
-  &:hover {
-    color: red-color;
-   
-  }
-  &:active {
-    color: blue-color;
-  }
-
-}
-
-.responsive-contact a{
-    display: none;
-
-    @include breakpoint(md){
-      display: block;
-      padding: .5em 2em; 
-      border: 3px solid red;
-      color: white;
-      font-family:black-font;
-      font-size: 20px;
-      &:hover {
-        
-        font-weight: bold;
-        background: blue;
-        border-color: blue;
-      }
-      &:active {
-        color: blue-color;
-      }
-
-    }      
-}
-.hack{
-  color: white;
-}
-.hide{
-  display: none;
-}
-ul{
-  list-style: none;
-
-}
-
-.dropdown a{
-  font-size: 15px;
-}
-.responsive-nav.mobile-nav .dropdown a {
-font-size: 20px;
-  @include breakpoint(md){
- font-size: 15px;
- text-align: left;
-
-  }
-
-}
 
 .box-container{
   display: flex;
@@ -405,22 +97,22 @@ font-size: 20px;
   display: flex;
    flex-direction: column; 
    justify-content: space-between;
-    border: solid 2px green; 
+    border: solid 2px $primary; 
     width:110px;     
      margin:.15em;
      @include breakpoint(md){
       padding: .5em;
-      width:130px;
+      width:150px;
       margin: .5em
      }
      
      h4{
        font-size: 20px;
-       color: white;
+       color: $primary;
      }
      p{
        font-size: 18px;
-       color: #01ff96;
+       color: black;
      }
 }
 

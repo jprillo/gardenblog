@@ -1,0 +1,29 @@
+
+
+  h1{
+    
+    font-size: 45px;
+    text-align: center;
+    color: $primary;
+    font-weight: 700;
+ 
+    @include breakpoint(md){
+      font-size: 60px;
+      text-align: left;
+     
+   
+  }
+
+  h2{
+    text-align: center;
+  }
+  
+  }
+  p{
+    color: black;
+    font-size: 18px;
+    font-family: $font;
+    @include breakpoint(md){
+      font-size: 20px
+    }
+  }

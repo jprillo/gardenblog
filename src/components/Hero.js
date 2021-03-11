@@ -1,6 +1,5 @@
 import React from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron'
-
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -22,13 +21,12 @@ const Hero = (
 
             
             </Col>
-            <Col >
-            <h1 >{props.title}<br/></h1> 
-        
-        <div className="title-line" style={{borderTop: "solid 2px white", margin: "40px 50px"}}></div>
-         <p style={{padding: "0 2em", margin: "50px 0 50px 50px "}}>
-    {props.description}
-  </p>
+            <Col>
+                <div className="hero-description"> 
+                    <h1>{props.title}</h1> 
+                    <p> {props.description}</p>
+                </div>
+           
   <div className="box-container text-center">
 
     <div className="box" >

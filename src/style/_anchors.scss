@@ -1,29 +1,33 @@
 
 
   h1{
-    
+    font-family: $font;
     font-size: 45px;
     text-align: center;
     color: $primary;
     font-weight: 700;
  
     @include breakpoint(md){
-      font-size: 60px;
-      text-align: left;
-     
+      font-size: 64px;
+      text-align: left;     
    
   }
-
+  }
   h2{
     text-align: center;
   }
   
-  }
+  
   p{
     color: black;
     font-size: 18px;
     font-family: $font;
+    line-height: 1.1em;
     @include breakpoint(md){
-      font-size: 20px
+      font-size: 22px
     }
+  }
+
+  a{
+    text-decoration: none;
   }

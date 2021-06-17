@@ -1,24 +1,74 @@
-@import "./reset";
-@import "~bootstrap/scss/bootstrap";
-@import "./breakpoints";
-@import "./variables";
-@import "./anchors";
-@import "./navbar";
+@import "reset";
+@import "breakpoints";
+@import "variables";
+@import "anchors";
+@import "navbar";
 
+.green{
 
+  right: 0,
+ 
+}
 
 
 .heroContainer{
-  margin-top: 10vh;
+  margin-top: 0px;
+  @include breakpoint(md){
+    margin: 80px 5%;
+    
+}
+}
+.range-container{
+background: $primary;
+  
+  padding: 5vw;
+  color: white;
+  @include breakpoint(md){
+    padding: 120px 15vw; 
+  }
+  
+  
+
+  p{
+    color: white;
+  }
+}
+.slideshow-btn{
+  font-size: 35px; 
+  cursor: pointer;
+   color: white; 
+   border: none;
+   margin-top: -60px; 
+  background: blue; 
+  height: 70px;
+   margin: 0;
+   width: 100%;
 }
 
 .hero-description{
-  padding: 1em;
+  padding: 1em ;
+  @include breakpoint(md){
+    padding: 1em 5% 0 5em;  
+}
+
+h1{
+  padding:.5em 0;
+  @include breakpoint(md){
+    padding: 0 150px .5em 0;
+}
+}
+p{
+  padding: 1em 0 2em;
+  @include breakpoint(md){
+    padding: 0 100px 1em 0; 
+}
+}
 }
 .butterfly-image{
   max-width: 500px;
+  
     @include breakpoint(md){
-    margin-top: 80px;
+   padding: 0 50px;
     max-width: 1000px;
 }
   
@@ -36,9 +86,26 @@
 }
   
 .row{
+  display: flex;
   flex-direction: column;
+  width: 100%;
   @include breakpoint(md){
     flex-direction: row;
+}
+}
+.row-reverse{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include breakpoint(md){
+    flex-direction: row-reverse;
+}
+}
+  
+.responsive-half{
+ width:100%;
+  @include breakpoint(md){
+    width:50%;
 }
 }
 
@@ -55,7 +122,9 @@
   from {width: 1%;}
   to {width: 90%;}
 }
-
+.text-center{
+  text-align: center;
+}
 
 .title-line{
   width: 90%;
@@ -102,7 +171,7 @@ top: 50px;
      margin:.15em;
      @include breakpoint(md){
       padding: .5em;
-      width:150px;
+      width:120px;
       margin: .5em
      }
      
@@ -113,6 +182,8 @@ top: 50px;
      p{
        font-size: 18px;
        color: black;
+       padding: .5em 0;
+     
      }
 }
 

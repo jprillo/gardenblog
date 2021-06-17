@@ -38,7 +38,7 @@
       
         .burger-close .line {
           box-shadow: none;
-          background: $secondary;
+          background: $primary;
           }
         .burger-close .line01 {
         transform:rotate(45deg);
@@ -51,11 +51,19 @@
       
   
   /**************************************END HAMBURGER*******************************/
-  
+  .navagation-wrap{
+    width: 100%;
+    position: relative;
+    top: 0;
+    
+ 
+  }
   .navagation-wrap.mobile-wrap #hamburger-wrap{
   position: fixed;
   z-index: 100000;
   right: 25px;
+  
+ 
   } /*Hack for keeping hamburger in place  */
   #active{
   color: blue-color;
@@ -65,14 +73,16 @@
   #main-nav-wrap{
   display: flex;
   justify-content: space-between;
-  padding:  .5em .5em .25em;
+  height: 40px;
   background-color: $primary;  
   position: relative;
   transition: background .5s; 
+ 
     
     @include breakpoint(md){
       padding:  1em 5%;
       transition: background 0s; 
+      min-height: 50px;
     }
   
   .logo-wrap a{

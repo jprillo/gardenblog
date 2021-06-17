@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
+import blue from '../../static/img/bluecurve.png'
+import green from '../../static/img/greencurve.png'
+
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import Range from '../components/Range'
 import FlexContainer from '../components/FlexContainer'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 
 
@@ -27,42 +28,14 @@ export const ButterflyPageTemplate = ({
   <div >
       {helmet || ''}
     <Hero description={description} latinname={latinname} lifespan={lifespan} image={image.childImageSharp.fluid.src} host={host} alt="hi" title={title}></Hero>
-<div className="life" style={{background: "#361D2F"}}>
-<h2>Life Cycle</h2>
-<Container style={{textAlign: "center"}}>
-  <Row>
-    <Col className="cycle-card">
-      <h4 style={{textAlign: "left"}}>Host Plant</h4>
-      <img width="100%" src={main.image1.image.childImageSharp.fluid.src } alt="Host" />
-      <p>{main.description1}</p>
-    </Col>
-       <Col className="cycle-card">
-       <h4 style={{textAlign: "left"}}>Egg</h4>
-      <img width="100%" src={main.image2.image.childImageSharp.fluid.src } alt="Host" />
-      <p>{main.description2}</p>
-    </Col>
-  </Row>
-    <Row>
-       <Col className="cycle-card">
-       <h4 style={{textAlign: "left"}}>Caterpillar</h4>
-      <img width="100%" src={main.image2.image.childImageSharp.fluid.src } alt="Host" />
-      <p>{main.description2}</p>
-    </Col>
-        <Col className="cycle-card">
-        <h4 style={{textAlign: "left"}}>Butterfly</h4>
-      <img width="100%" src={main.image2.image.childImageSharp.fluid.src } alt="Host" />
-      <p>{main.description2}</p>
-    </Col>
-  </Row>
 
-</Container>
 
-</div>
-<div style={{background: "#200630", color: "white"}}>
-<h2>Range</h2>
-<FlexContainer description={range.description} cycle="Range" image={range.image.image.childImageSharp.fluid.src } alt="mo" ></FlexContainer>
-</div>
+<Range description={range.description} cycle="Range" image={range.image.image.childImageSharp.fluid.src } alt="mo" />
 
+<FlexContainer dir="green" curve={green} row="row-reverse" description={range.description} cycle="Range" image={range.image.image.childImageSharp.fluid.src } alt="mo" />
+<FlexContainer dir="blue" curve={blue} row="row" description={range.description} cycle="Range" image={range.image.image.childImageSharp.fluid.src } alt="mo" />
+<FlexContainer dir="green" curve={green} row="row-reverse" description={range.description} cycle="Range" image={range.image.image.childImageSharp.fluid.src } alt="mo" />
+<FlexContainer dir="blue" curve={blue} row="row" description={range.description} cycle="Range" image={range.image.image.childImageSharp.fluid.src } alt="mo" />
 
   </div>
 )

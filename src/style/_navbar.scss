@@ -80,9 +80,10 @@
  
     
     @include breakpoint(md){
-      padding:  1em 5%;
+      padding:  1em 2em;
       transition: background 0s; 
-      min-height: 50px;
+      height: auto;
+      
     }
   
   .logo-wrap a{
